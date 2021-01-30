@@ -1,0 +1,107 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("indexBackground.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #1a1a1d
+}
+.center{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    width: 100px;
+    height: 100px;
+}
+.box{
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 400px;
+    top:20%;
+    margin-left: 95%;
+    padding: 0%;
+    flex-direction: column;
+    background: white;
+    font-size: 25;
+    border-radius: 15px;
+    position: absolute;
+    overflow: hidden;
+    box-shadow: 0px 0px 50px rgba(0,0,0,0.9);
+}
+.box:hover{
+    color: black;
+}
+.box::before{
+    content: ' ';
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    width:5px;
+    height: 300px;
+    border-radius: 50px;
+    transition: all .4s;
+    background: linear-gradient(19deg, #21d4fd 0%, #8721ff 74%);
+}
+.box:hover::before{
+    top: 0;
+    left: 0;
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+}
+.box p,h1,script{
+    margin: 5px 50px;
+    z-index: 1000;
+}
+ol{
+    list-style: none;
+    display: flex;
+}
+ol li{
+    margin-top: 10px;
+    padding: 10px 20px;
+    position: relative;
+    transition: ease 1s;
+    transition-delay: 0.2s;
+}
+ol li a{
+    color: white;
+    text-decoration: none;
+}
+ol li::before{
+    content: "";
+    position: relative;
+    width: 80px;
+    height: 0px;
+    background: white;
+    transition: all 0.4s;
+}
+ol li:hover::before{
+    bottom: 30px;
+    background: white;
+}
+ol li:hover{
+    background: black;
+    border-radius: 100px;
+}
+.nav{
+    width: auto;
+    content: " ";
+    padding-left: 125px ;
+    padding-right: 75px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 28px; 
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    height: auto;
+    background: linear-gradient(19deg, #21d4fd 0%, #8721ff 74%);
+}

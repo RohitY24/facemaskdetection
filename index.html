@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Face Mask Detection System</title>
+    <link rel="icon" href="assets/icon.png" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+        // register service worker
+        navigator.serviceWorker.register('service-worker.js');
+        }
+</script>
+</head>
+<body bgcolor="#1a1a1d">
+<div class="nav">Face Mask Detection System<div id="clockbox" style="float: right; font-size: 20px; font-weight: 100;"></div>
+    <script type="text/javascript">
+        var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+        
+        function GetClock(){
+        var d=new Date();
+        var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+        var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+        
+        if(nhour==0){ap=" AM";nhour=12;}
+        else if(nhour<12){ap=" AM";}
+        else if(nhour==12){ap=" PM";}
+        else if(nhour>12){ap=" PM";nhour-=12;}
+        
+        if(nmin<=9) nmin="0"+nmin;
+        if(nsec<=9) nsec="0"+nsec;
+        
+        var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+        document.getElementById('clockbox').innerHTML=clocktext;
+        }
+        
+        GetClock();
+        setInterval(GetClock,1000);
+        </script>
+</div>
+</div>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <div class="main center">
+        <div class="box center">
+            <h1><u>     Welcome    </u></h1>
+            <br>
+            <p>
+                With the ongoing Covid-19 pandemic, it has been advised by Medical institutions to wear face masks. 
+            </p>
+            <p>
+                Following this, we tried to develop a <b>'Face Mask Recognition System'</b> to monitor if people are wearing a face mask or not at their workplace premises.
+            </p>
+            <br>
+
+
+
+            <br>
+            <ol>
+                <li><a href="train.html">Click here to Proceed</a></li>
+            </ol>
+        </div>
+
+    </div>
+</body>
+</html>
