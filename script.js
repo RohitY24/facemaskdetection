@@ -2,7 +2,7 @@ let mobilenet;
 let classifier;
 let video;
 let label = 'Loading model';
-let maskonButton,maskoffButton;
+let vidonbutton, maskonButton,maskoffButton;
 let saveButton; 
 let trainButton;
 
@@ -27,6 +27,12 @@ function setup() {
 
   video = createCapture(VIDEO);
   video.hide();
+  
+  vidonbtn = createButton('Enable Video Input');
+  vidonbtn.position(670,550);
+  vidonbtn.mousePressed(function() {
+    video.play();
+});
 
   background(0);
   mobilenet = ml5.featureExtractor('MobileNet', modelReady);
