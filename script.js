@@ -38,13 +38,37 @@ function setup() {
   mobilenet = ml5.featureExtractor('MobileNet', modelReady);
   classifier = mobilenet.classification(video, videoReady);
 
+  //maskonButton = createButton('Mask On');
+  //maskonButton.mousePressed(function() {
+  //  classifier.addImage('Mask On');
+  //});
+
+  //maskoffButton = createButton('Mask Off');
+  //maskoffButton.mousePressed(function() {
+  //  classifier.addImage('Mask Off');
+  //});
+
+  //trainButton = createButton('Train');
+  //trainButton.mousePressed(function() {
+  //  classifier.train(whileTraining);
+  //});
+
+  //saveButton = createButton('Save');
+  //saveButton.mousePressed(function() {
+  //  classifier.save();
+  //});
+  }
+
 function draw() {
   background(0);
   push();
   translate(width,0);
   scale(-1, 1);
   image(video, 0, 0, 600, 450);
-  pop();
+  pop();  
+  //fill(255);
+  //textSize(16);
+  //text(label, 10, height - 10);
 
 select('#display_text').html(label)
 if(label == 'Mask On'){
@@ -78,5 +102,4 @@ function gotResults(error, result) {
     label = result[0].label;
     classifier.classify(gotResults);
   }
-}
 }
