@@ -44,10 +44,7 @@ function draw() {
   translate(width,0);
   scale(-1, 1);
   image(video, 0, 0, 600, 450);
-  pop();  
-  //fill(255);
-  //textSize(16);
-  //text(label, 10, height - 10);
+  pop();
 
 select('#display_text').html(label)
 if(label == 'Mask On'){
@@ -63,14 +60,14 @@ else if(label == 'Mask Off'){
 }
 }
 
-function whileTraining(loss) {
+/*function whileTraining(loss) {
   if (loss == null) {
     console.log('Training Complete');
     classifier.classify(gotResults);
   } else {
     console.log(loss);
   }
-}
+}*/
 
 function gotResults(error, result) {
   if (error) {
