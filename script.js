@@ -82,3 +82,4 @@ function gotResults(error, result) {
     classifier.classify(gotResults);
   }
 }
+}
