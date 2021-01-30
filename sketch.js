@@ -2,7 +2,7 @@ let mobilenet;
 let classifier;
 let video;
 let label = 'Model training required';
-let maskonbtn, maskoffbtn, trainbtn, savebtn;
+let vidonbtn, maskonbtn, maskoffbtn, trainbtn, savebtn;
 
 function modelReady() {
   console.log('Model is ready!!!');
@@ -20,7 +20,7 @@ function videoReady() {
 }
 
 function setup() {
-  var cnv = createCanvas(680, 510); //600,500
+  var cnv = createCanvas(720, 560); //600,500
   var x = (windowWidth - width) / 2;
   var y = (windowHeight - height) / 2;
   cnv.position(x, y);
@@ -28,6 +28,11 @@ function setup() {
   video = createCapture(VIDEO);
   video.hide();
   background(0);
+  vidonbtn = createButton('Enable Video Input');
+  vidonbtn.position(x+280,620);
+  vidonbtn.mousePressed(function() {
+    video.play();
+});
   mobilenet = ml5.featureExtractor('MobileNet', modelReady);
   classifier = mobilenet.classification(video, videoReady);
 
@@ -50,7 +55,6 @@ function setup() {
   savebtn.mousePressed(function() {
     classifier.save();
   });
-
  }
 
 
@@ -60,12 +64,12 @@ function draw() {
   push();
   translate(width,0);
   scale(-1, 1);
-  image(video, 0, 0, 680, 480);
+  image(video, 0, 0, 720, 520);
   pop();
   
   fill(255);
   textSize(25);
-  text(label, 205, height - 8);
+  text(label, 250, height - 8);
 }
 
 function whileTraining(loss) {
