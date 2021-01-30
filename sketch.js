@@ -53,7 +53,7 @@ function setup() {
 
   savebtn = createButton('Save');
   savebtn.mousePressed(function() {
-    classifier.save('localstorage://model');
+    await classifier.save('localstorage://model');
   });
  }
 
